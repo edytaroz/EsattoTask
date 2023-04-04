@@ -32,14 +32,14 @@ public class Main extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 String name = JOptionPane.showInputDialog(frame,
                         "Please write the name of the customer", null);
-                String NIP = JOptionPane.showInputDialog(frame,
-                        "Please write the NIP of the customer", null);
+                String VATid = JOptionPane.showInputDialog(frame,
+                        "Please write the VAT Identification Number of the customer", null);
                 String address = JOptionPane.showInputDialog(frame,
                         "Please write the address of the customer", null);
                 long millis=System.currentTimeMillis();
                 java.sql.Date date = new java.sql.Date(millis);
-                if(name != null && NIP != null && address != null)
-                    program.addCustomer(new Customers(name,NIP,date,address));
+                if(name != null && VATid != null && address != null)
+                    program.addCustomer(new Customers(name,VATid,date,address));
             }
         });
         button2.addActionListener(new ActionListener() {
@@ -56,22 +56,22 @@ public class Main extends JFrame {
                         "address");
 
                 if (s != null) {
-                    String NIP = JOptionPane.showInputDialog(frame,
-                            "Please write the NIP of the customer you want to edit", null);
+                    String VATid = JOptionPane.showInputDialog(frame,
+                            "Please write the VAT Identification Number of the customer you want to edit", null);
                     String value = JOptionPane.showInputDialog(frame,
                             "Please write the edited form", null);
-                    if(NIP != null && value != null)
-                        program.editCustomer(NIP,s,value,frame);
+                    if(VATid != null && value != null)
+                        program.editCustomer(VATid,s,value,frame);
                 }
             }
         });
         button3.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String name = JOptionPane.showInputDialog(frame,
-                        "Please write the NIP of the customer you want to delete", null);
-                if(name != null)
-                    program.deleteCustomer(name);
+                String VATid = JOptionPane.showInputDialog(frame,
+                        "Please write the VAT Identification Number of the customer you want to delete", null);
+                if(VATid != null)
+                    program.deleteCustomer(VATid);
             }
         });
         button4.addActionListener(new ActionListener() {

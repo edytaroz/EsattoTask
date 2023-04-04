@@ -1,13 +1,13 @@
 public class Customers {
     private String name;
     private String address;
-    private final String NIP;
+    private final String VATid;
     private final java.sql.Date date;
-    public Customers(String name,String NIP,java.sql.Date date,String address){
+    public Customers(String name, String VATid, java.sql.Date date, String address){
         this.address = address;
         this.name = name;
         this.date = date;
-        this.NIP = NIP;
+        this.VATid = VATid;
     }
     public String getName(){
         return name;
@@ -15,8 +15,8 @@ public class Customers {
     public String getAddress(){
         return address;
     }
-    public String getNIP(){
-        return NIP;
+    public String getVATid(){
+        return VATid;
     }
     public java.sql.Date getDate(){
         return date;

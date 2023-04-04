@@ -10,23 +10,23 @@ public class Program {
         map = new HashMap();
     }
     public void addCustomer(Customers customers){
-        map.put(customers.getNIP(), customers);
+        map.put(customers.getVATid(), customers);
     }
-    public void editCustomer(String NIP, String s, String value, JFrame frame){
-        if(!map.containsKey(NIP)){
+    public void editCustomer(String VATid, String s, String value, JFrame frame){
+        if(!map.containsKey(VATid)){
             JOptionPane.showMessageDialog(frame,
                     "Customer doesn't exist");
         }else {
             if(Objects.equals(s, "address")){
-                map.get(NIP).setAddress(value);
+                map.get(VATid).setAddress(value);
             }else{
-                map.get(NIP).setName(value);
+                map.get(VATid).setName(value);
             }
         }
     }
-    public void deleteCustomer(String NIP){
-        if(map.containsKey(NIP)) {
-            map.remove(NIP);
+    public void deleteCustomer(String VATid){
+        if(map.containsKey(VATid)) {
+            map.remove(VATid);
         }
     }
     public void listCustomers(){
@@ -43,7 +43,7 @@ public class Program {
                 for(Customers i: map.values()){
                     JLabel label = new JLabel();
                     label.setAlignmentX(Component.CENTER_ALIGNMENT);
-                    label.setText("NIP " + i.getNIP() + " address " + i.getAddress() + " name " + i.getName() + " date " + i.getDate() + "\n");
+                    label.setText("VATid " + i.getVATid() + " address " + i.getAddress() + " name " + i.getName() + " date " + i.getDate() + "\n");
                     panel.add(label);
                     panel.add(Box.createRigidArea(new Dimension(0, 10)));
                 }
